@@ -922,7 +922,7 @@ function startNight(){
     
     GameState.waveCursor = 0;
     GameState.assignments = {};
-
+　　salesThisWave = 0;
     openWaveModal();
 }
 
@@ -1331,8 +1331,8 @@ function finishNight(){
 function showWeekReport(){
   const perCastSales = GameState.perCastSales || [];
   const reportHtml = `
-    <div>本週売上合計: <strong>${yen(GameState.totalSales - (GameState.lastReport?.cumTotal || 0))}</strong></div>
-    <div>来客波: ${GameState.waves.length}</div>
+    <div>前週売上: <strong>${yen(GameState.totalSales - (GameState.lastReport?.cumTotal || 0))}</strong></div>
+    <div>接客数: ${GameState.waves.length}</div>
     <div>広告費用: ${yen(GameState.adCost)} ／ 給料支払: ${yen(salary)}</div>
     <div>評判: ${GameState.rep} ／ 知名度: ${GameState.pop} ／ ランク: ${GameState.rank}</div>
     <h4>キャスト別売上（推計）</h4>
@@ -1549,6 +1549,7 @@ document.getElementById("btnReset2").onclick = ()=>{ initGame(); document.getEle
 </script>
 </body>
 </html>
+
 
 
 
